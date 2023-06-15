@@ -36,16 +36,8 @@ To get a local copy up and running follow these steps.
 ### Installation
 
 1. Clone the repository
-2. Create a new database in MySQL called square
-3. Update the database connection settings
-   ```yml
-   # src/main/resources/application-dev.yml
-   spring:
-      datasource:
-          url: jdbc:mysql://localhost/square
-          username: root
-          password: <your-password>
-   ```
+
+
 <!-- USAGE -->
 ## Usage
 
