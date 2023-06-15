@@ -75,11 +75,11 @@ the domain layer and encapsulates the business logic and rules.
 
 ## Entry Points
 
-### Entry point create restaurant
-![Image text](img/EntryPointCreateRestaurant.jpg)
+### Entry point Send Message
+![Image text](img/EntryPointSendMessage.jpg)
 
-### Exit point create restaurant
-![Image text](/img/ExitPointCreateRestaurant.jpg)
+### Exit point Message sent
+![Image text](/img/ExitPointMessageSent.jpg)
 
 
 ## Author ✒️
