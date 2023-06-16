@@ -13,7 +13,7 @@ public class MessagingHandlerImpl implements IMessagingHandler {
 
     private final IMessagingServicePort messagingServicePort;
     @Override
-    public void sendMessage(String bodyMessage) {
-       messagingServicePort.sendMessage(bodyMessage);
+    public void sendMessage(String bodyMessage, String number) {
+       messagingServicePort.sendMessage(bodyMessage,number);
     }
 }

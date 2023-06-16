@@ -14,7 +14,7 @@ public class MessagingUseCase implements IMessagingServicePort {
     }
 
     @Override
-    public void sendMessage(String bodyMessage) {
-        messagingPersistencePort.sendMessage(bodyMessage);
+    public void sendMessage(String bodyMessage, String number) {
+        messagingPersistencePort.sendMessage(bodyMessage,number);
     }
 }

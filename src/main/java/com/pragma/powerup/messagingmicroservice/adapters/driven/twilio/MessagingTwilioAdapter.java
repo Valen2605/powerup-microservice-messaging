@@ -13,10 +13,10 @@ public class MessagingTwilioAdapter implements IMessagingPersistencePort {
 
 
    @Override
-   public void sendMessage(String bodyMessage){
+   public void sendMessage(String bodyMessage, String number){
     Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
     Message message = Message.creator(
-            new com.twilio.type.PhoneNumber("+573127982069"),
+            new com.twilio.type.PhoneNumber(number),
             new com.twilio.type.PhoneNumber("+13262223055"),
             bodyMessage)
             .create();

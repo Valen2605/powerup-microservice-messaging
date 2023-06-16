@@ -12,10 +12,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.Map;
@@ -36,9 +33,9 @@ public class MessagingRestController {
                     @ApiResponse(responseCode = "409", description = "Message Error",
                             content = @Content(mediaType = "application/json", schema = @Schema(ref = "#/components/schemas/Error"))),
             })
-    @PostMapping("/sendMessage")
-    public ResponseEntity<Map<String, String>> sendMessage(@Valid @RequestBody String message){
-        messagingHandler.sendMessage(message);
+    @PostMapping("/sendMessage/{number}")
+    public ResponseEntity<Map<String, String>> sendMessage(@RequestParam String number, @Valid @RequestBody String message ){
+        messagingHandler.sendMessage(message,number);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(Collections.singletonMap(Constants.RESPONSE_MESSAGE_KEY, Constants.MESSAGE_SEND));
     }
