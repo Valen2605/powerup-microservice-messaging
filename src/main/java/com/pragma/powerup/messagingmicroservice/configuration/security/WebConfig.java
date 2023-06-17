@@ -19,6 +19,6 @@ public class WebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
 
         registry.addInterceptor(interceptor)
-                .addPathPatterns("/restaurant/**","/category/**","/dish/**","/order/**");
+                .addPathPatterns("/messaging/**");
     }
 }

@@ -34,7 +34,7 @@ public class MessagingRestController {
                             content = @Content(mediaType = "application/json", schema = @Schema(ref = "#/components/schemas/Error"))),
             })
     @PostMapping("/sendMessage/{number}")
-    public ResponseEntity<Map<String, String>> sendMessage(@RequestParam String number, @Valid @RequestBody String message ){
+    public ResponseEntity<Map<String, String>> sendMessage(@PathVariable String number, @Valid @RequestBody String message ){
         messagingHandler.sendMessage(message,number);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(Collections.singletonMap(Constants.RESPONSE_MESSAGE_KEY, Constants.MESSAGE_SEND));
